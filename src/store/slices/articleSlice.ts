@@ -4,7 +4,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 const initialState: TArticleState = {
   isLoadingArticles: false,
   articles: [],
-  favoriteID: [],
+  searchKey: "",
 };
 export const articleSlice = createSlice({
   name: "articles",
@@ -14,11 +14,15 @@ export const articleSlice = createSlice({
       state.articles = payload;
       state.isLoadingArticles = false;
     },
+    setSearch: (state, { payload }: PayloadAction<string>) => {
+      state.searchKey = payload;
+    },
     setIsLoadingArticles: (state, { payload }: PayloadAction<boolean>) => {
       state.isLoadingArticles = payload;
     },
   },
 });
-export const { setArticle, setIsLoadingArticles } = articleSlice.actions;
+export const { setArticle, setIsLoadingArticles, setSearch } =
+  articleSlice.actions;
 
 export default articleSlice.reducer;

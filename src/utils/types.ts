@@ -13,5 +13,5 @@ export type TArticle = {
 export type TArticleState = {
   isLoadingArticles: boolean;
   articles: Array<TArticle>;
-  favoriteID: Array<TArticle>;
+  searchKey: string;
 };
