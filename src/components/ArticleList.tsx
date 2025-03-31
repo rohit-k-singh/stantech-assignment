@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import ArticleItem from "./ArticleItem";
+import Loader from "./Loader";
 
 const ArticleList = () => {
   const { searchKey, isLoadingArticles, articles } = useSelector(
@@ -15,7 +16,7 @@ const ArticleList = () => {
       : articles;
   }, [searchKey, articles]);
   if (isLoadingArticles) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
   if (filteredArticles.length === 0) {
     return (

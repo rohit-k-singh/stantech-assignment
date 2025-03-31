@@ -11,7 +11,7 @@ const Navbar = (props: Props) => {
     dispatch(setSearch(value));
   };
   return (
-    <div className="px-10 pt-5 flex w-full justify-between items-center">
+    <div className="px-10 pt-5 flex w-full sm:flex-row flex-col justify-between items-center">
       <h1 className="text-3xl font-bold text-indigo-600">Finance News</h1>
       <div className="border border-indigo-300 rounded-xl flex items-center">
         <input
