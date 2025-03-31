@@ -24,14 +24,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const isDetailsPage = headersList.get("referer")?.includes("details");
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PageWrapper isDetailsPage={isDetailsPage}>{children}</PageWrapper>
+        <PageWrapper>{children}</PageWrapper>
       </body>
     </html>
   );

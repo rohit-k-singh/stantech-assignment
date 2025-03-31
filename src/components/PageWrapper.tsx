@@ -4,17 +4,12 @@ import { Provider } from "react-redux";
 import { store } from "@/src/store";
 import Navbar from "./Navbar";
 
-type Props = {
-  isDetailsPage?: boolean;
-};
+type Props = {};
 
-const PageWrapper: FC<PropsWithChildren<Props>> = ({
-  children,
-  isDetailsPage,
-}) => {
+const PageWrapper: FC<PropsWithChildren<Props>> = ({ children }) => {
   return (
     <Provider store={store}>
-      <Navbar isDetailsPage={isDetailsPage} />
+      <Navbar />
       {children}
     </Provider>
   );
