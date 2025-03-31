@@ -11,10 +11,14 @@ const Home = (props: Props) => {
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      dispatch(setIsLoadingArticles(true));
-      const res = await axiosInstance.get("articles/extended");
-      const data = res.data.articles;
-      dispatch(setArticle(data));
+      try {
+        dispatch(setIsLoadingArticles(true));
+        const res = await axiosInstance.get("articles/extended");
+        const data = res.data.articles;
+        dispatch(setArticle(data));
+      } catch (error) {
+        dispatch(setArticle([]));
+      }
     })();
   }, []);
   return (
