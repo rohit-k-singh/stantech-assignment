@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
+import ArticleItem from "./ArticleItem";
 
 const ArticleList = () => {
   const { articles, isLoadingArticles } = useSelector(
@@ -14,7 +15,7 @@ const ArticleList = () => {
       {articles
         ?.filter((article) => article.content.length !== 0)
         .map((article) => {
-          return <div key={article.link}>{article.title}</div>;
+          return <ArticleItem article={article} key={article.link} />;
         })}
     </div>
   );
