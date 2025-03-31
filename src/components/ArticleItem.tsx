@@ -62,7 +62,7 @@ const ArticleItem = ({ article }: Props) => {
         <div className="grid grid-cols-2 mt-auto gap-4 text-sm text-gray-500 mb-4">
           <div className="flex items-center">
             <UsersIcon size={16} className="mr-2" />
-            <span className="truncate">{authors}</span>
+            <span className="truncate">{authors || "NA"}</span>
           </div>
           <div className="flex items-center">
             <CalendarIcon size={16} className="mr-2" />

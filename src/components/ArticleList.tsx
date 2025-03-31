@@ -27,11 +27,9 @@ const ArticleList = () => {
   }
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {articles
-        ?.filter((article) => article.content.length !== 0)
-        .map((article) => {
-          return <ArticleItem article={article} key={article.link} />;
-        })}
+      {filteredArticles.map((article) => {
+        return <ArticleItem article={article} key={article.link} />;
+      })}
     </div>
   );
 };
