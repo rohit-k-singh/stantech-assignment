@@ -1,4 +1,4 @@
-import ArticleDetails from "@/src/components/ArticleDetails";
+import ArticleDetails from "@/src/pages/ArticleDetails";
 import React from "react";
 
 type Props = {
@@ -6,8 +6,8 @@ type Props = {
 };
 
 const DetailsPage = async (props: Props) => {
-  const pp = await props.searchParams;
-  const indexOfArticle = pp.link;
+  const searchParams = await props.searchParams;
+  const indexOfArticle = searchParams.id;
   return (
     <main>
       <ArticleDetails id={indexOfArticle} />
