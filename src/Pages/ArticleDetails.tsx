@@ -25,6 +25,10 @@ const ArticleDetails = ({ id }: Props) => {
   return (
     <div className="px-10 py-5">
       <h1 className="text-3xl font-bold font-mono">{article.title}</h1>
+      {/* the summary and content are Rich text so using dangerouslySetInnerHTML 
+      ideally we should sanitize the rich text to avoid xss attacks 
+      because of js embedding in rich text.
+      */}
       <h2
         dangerouslySetInnerHTML={{ __html: article.summary }}
         className="text-gray-500 mt-5 font-bold font-mono"
