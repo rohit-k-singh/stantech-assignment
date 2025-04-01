@@ -1,4 +1,4 @@
-import ArticleDetails from "@/src/pages/ArticleDetails";
+import ArticleDetails from "@/src/screens/ArticleDetails";
 import React from "react";
 
 type Props = {
