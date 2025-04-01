@@ -1,14 +1,12 @@
 "use client";
-import React from "react";
-import { RootState } from "../store";
-import { useSelector } from "react-redux";
 import Link from "next/link";
+import useReduxStore from "../hooks/useReduxStore";
 
 type Props = { id: number };
 
 const ArticleDetails = ({ id }: Props) => {
-  const { articles } = useSelector((state: RootState) => state.articleState);
-  const article = articles.find((_, index) => index === +id);
+  const { getArticleByIndex } = useReduxStore();
+  const article = getArticleByIndex(id);
   if (!article) {
     return (
       <div className="flex flex-col items-center mt-10">

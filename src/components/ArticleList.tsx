@@ -1,20 +1,10 @@
-import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
 import ArticleItem from "./ArticleItem";
 import Loader from "./Loader";
+import useReduxStore from "../hooks/useReduxStore";
 
 const ArticleList = () => {
-  const { searchKey, isLoadingArticles, articles } = useSelector(
-    (state: RootState) => state.articleState
-  );
-  const filteredArticles = useMemo(() => {
-    return searchKey.length > 0
-      ? articles.filter((article) =>
-          article.title.toLowerCase().includes(searchKey.toLowerCase())
-        )
-      : articles;
-  }, [searchKey, articles]);
+  const { isLoadingArticles, filteredArticles } = useReduxStore();
+
   if (isLoadingArticles) {
     return <Loader />;
   }
