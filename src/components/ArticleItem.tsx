@@ -11,7 +11,7 @@ export const ReadMoreLink = ({ id }: { id: number }) => {
   return (
     <Link
       href={"/details?id=" + id}
-      className="inline-flex mt-4 items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
+      className="inline-flex w-max mt-4 items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
     >
       Read Article
     </Link>
